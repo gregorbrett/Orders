@@ -1,11 +1,51 @@
- <mvc:View controllerName="com.gb.Orders.controller.MainView"
-  displayBlock="true"
-  xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
-  <App id="idAppControl" >
+<mvc:View controllerName="com.gb.Orders.controller.MainView" displayBlock="true" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+  <App id="idAppControl">
     <pages>
-      <Page title="{i18n>title}">
-        <content></content>
+      <Page title="Orders">
+        <content>
+          <FlexBox alignItems="Start">
+            <Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+
+              <List headerText="Open Orders" items="{
+            path: '/Orders'
+          }">
+                <StandardListItem title="{order}" />
+
+              </List>
+              <layoutData>
+                <FlexItemData growFactor="1" />
+              </layoutData>
+            </Panel>
+
+            <Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+              <List headerText="Orders in Progress" items="{
+            path: '/Orders'
+          }">
+                <StandardListItem title="{order}" />
+                <layoutData>
+                  <FlexItemData growFactor="1" />
+                </layoutData>
+              </List>
+              <layoutData>
+                <FlexItemData growFactor="1" />
+              </layoutData>
+            </Panel>
+
+            <Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+              <List headerText="Completed Orders" items="{
+            path: '/Orders'
+          }">
+                <StandardListItem title="{order}" />
+                <layoutData>
+                  <FlexItemData growFactor="1" />
+                </layoutData>
+              </List>
+              <layoutData>
+                <FlexItemData growFactor="1" />
+              </layoutData>
+            </Panel>
+          </FlexBox>
+        </content>
       </Page>
     </pages>
   </App>
